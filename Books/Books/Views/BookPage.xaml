@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Books.Views.BookPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="bookStack">
+                <Label Text="Raamatu pealkiri" />
+                <Entry Text="{Binding BookName}" FontSize="Medium" />
+                <Label Text="Autor" />
+                <Entry Text="{Binding Author}" FontSize="Medium" />
+                <Label Text="Жанр" />
+                <Entry Text="{Binding Genre}" FontSize="Medium" />
+                <Label Text="Loetud" />
+                <CheckBox IsChecked="{Binding wasRead}" />
+                <Label Text="Kommentaar" />
+                <Entry Text="{Binding Commentary}" FontSize="Medium" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button
+                Text="Lisa"
+                Command="{Binding ListViewModel.SaveBookCommand}"
+                CommandParameter="{Binding}"/>
+                <Button
+                Text="Kustuta"
+                Command="{Binding ListViewModel.DeleteBookCommand}"
+                CommandParameter="{Binding}"/>
+                <Button
+                Text="Tagasi"
+                Command="{Binding ListViewModel.BackCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Books.Views.DBBookPage">
+    <StackLayout>
+        <Label Text="Raamatu pealkiri" />
+        <Entry Text="{Binding BookName}" />
+        <Label Text="Autor" />
+        <Entry Text="{Binding Author}" />
+        <Label Text="Žanr" />
+        <Entry Text="{Binding Genre}" />
+        <Label Text="Loutud" />
+        <CheckBox IsChecked="{Binding wasRead}" />
+        <Label Text="Kommentaar" />
+        <Entry Text="{Binding Commentary}" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Salvestada" Clicked="SaveBook" />
+            <Button Text="Kustuta" Clicked="DeleteBook" />
+            <Button Text="Tühista" Clicked="Cancel" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
